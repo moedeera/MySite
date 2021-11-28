@@ -1,0 +1,26 @@
+{
+  "name": "mysite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js",
+    "server": "nodemon index.js",
+    "client": " npm start --prefix client",
+    "start": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moedeera/MySite.git"
+  },
+  "author": "Moe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/moedeera/MySite/issues"
+  },
+  "homepage": "https://github.com/moedeera/MySite#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.15"
+  }
+}
