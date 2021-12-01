@@ -62,4 +62,15 @@ font-size: 30px;
 color: coral;
 }
 
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+/* Navbar*/
 
+.Navbar{
+  display: grid;
+  grid-template-columns: 1fr;
+  margin:0 auto;
+}
+
+
+}
