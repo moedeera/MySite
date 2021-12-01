@@ -3,12 +3,12 @@ const express = require('express');
 const app = express();
 
 
-app.get('/', (req, res) => {
+// app.get('/', (req, res) => {
 
 
-res.send('its working')
+// res.send('its working')
 
-})
+// })
 
 
 if (process.env.NODE_ENV === 'production'){
