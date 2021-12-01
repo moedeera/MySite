@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: black;
+  
 }
 
 .App-logo {
@@ -36,3 +38,28 @@
     transform: rotate(360deg);
   }
 }
+/* Navbar*/
+.Navbar{
+
+  display: flex;
+  justify-content: flex-end;
+  background-color: cornflowerblue;
+
+}
+.List{
+background-color: darkcyan;
+width: 30%;
+  display: flex;
+ justify-content: space-between;
+
+}
+
+
+/*Homepage*/
+.Homepage{
+
+font-size: 30px;
+color: coral;
+}
+
+
