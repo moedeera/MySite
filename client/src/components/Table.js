@@ -5,11 +5,11 @@ export const Table = () => {
 
 const Array = [{rank:1,name:'Sam', age:25, gender:true},{rank:2,name:'Bill', age:35, gender:true},{rank:3,name:'John', age:22, gender:true},{rank:4,name:'Sarah', age:19, gender:false}]
 
-function Alpha  (){
-console.log('hello')
-
+ const Alpha = ()=>{
+    Array.sort((a,b) => (a.name> b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
+    console.log(Array)
 }
-function Numa  (){
+ const Numa = ()=>{
 
     console.log('Numa')
     
@@ -27,8 +27,8 @@ function Numa  (){
              <div className="Standings">
 <div className="column">
                 <div> <h3>Rank</h3></div>
-               <div> <h3 onClick= {Alpha()}>Name</h3></div>
-                <div> <h3 onClick= {Numa()}>Age</h3></div>
+               <div onClick= {()=>Alpha()}> <h3 >Name</h3></div>
+                <div> <h3 onClick= {()=>Numa()}>Age</h3></div>
                 <div> <h3>Gender</h3></div>
 </div>
             {Array.map((profile)=>(
