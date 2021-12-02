@@ -1,11 +1,11 @@
 
-import { Homepage } from './pages/Homepage';
+import Homepage  from './pages/Homepage';
 import Projects from './pages/Projects';
 import {
   BrowserRouter as
   Router,
   Route,
-  Routes
+  Switch
 } from "react-router-dom";
 
 
@@ -22,11 +22,10 @@ function App() {
   </div>
 
 
-
-<Routes>
-  <Route exact path='/' element={<Homepage/>} />
-<Route path="/Projects" element={Projects} />
-</Routes>
+<Route exact path='/' component={Homepage} />
+<Switch>
+<Route exact path="/Projects" component={Projects} />
+</Switch>
 
 
 
