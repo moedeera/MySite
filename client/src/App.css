@@ -66,10 +66,9 @@ color: coral;
 @media only screen and (max-width: 600px) {
 /* Navbar*/
 
-.Navbar{
-  display: grid;
-  grid-template-columns: 1fr;
-  margin:0 auto;
+.List{
+  display: none;
+  
 }
 
 

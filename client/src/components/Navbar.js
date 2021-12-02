@@ -10,6 +10,9 @@ export const Navbar = () => {
                 <li>Contact</li>
 
             </ul>
+
+            <i class="fas fa-bars"></i>
+
         </div>
     )
 }

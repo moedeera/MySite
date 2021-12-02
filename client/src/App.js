@@ -20,14 +20,14 @@ function App() {
     <div className="App">
       <Navbar/>
 <Route exact path='/' component={Homepage} />
+<Switch>
+<Route exact path="/Projects" component={Projects} />
+</Switch>
 
   </div>
 
 
 
-<Switch>
-<Route exact path="/Projects" component={Projects} />
-</Switch>
 
 
 
