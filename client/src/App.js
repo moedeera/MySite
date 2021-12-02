@@ -1,11 +1,11 @@
-import logo from './logo.svg';
+
 import { Homepage } from './pages/Homepage';
 import Projects from './pages/Projects';
 import {
-  BrowserRouter,
-  Routes,
+  BrowserRouter as
+  Router,
   Route,
-  Link
+  Routes
 } from "react-router-dom";
 
 
@@ -14,26 +14,27 @@ import './App.css';
 function App() {
   
   return (
-    <BrowserRouter>
+    <Router>
    
     <div className="App">
     <Homepage/>
 
- 
- <Routes>
+  </div>
 
-<Route path='/' element={<Homepage/>} />
 
- </Routes>
+
+<Routes>
+  <Route exact path='/' element={<Homepage/>} />
+<Route path="/Projects" element={Projects} />
+</Routes>
+
+
+
+
+
    
-
-
-
-
-
-    </div>
    
-</BrowserRouter>
+</Router>
 
   );
 }
