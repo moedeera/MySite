@@ -1,15 +1,12 @@
 import React from 'react'
 
-export const Homepage = () => {
+export const Table = () => {
     return (
         <div className="Homepage">
-
-            <h1>DeeraCode</h1>
-            
+            Table
         </div>
     )
 }
 
-export default Homepage
 
-
+export default Table

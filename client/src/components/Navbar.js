@@ -1,12 +1,13 @@
 import React from 'react'
 
+
 export const Navbar = () => {
     return (
         <div className="Navbar">
             <ul className="List">
 
-                <li> <a href="">Home</a>   </li>
-                <li>Portfolio</li>
+                <li> <a href="/">Home</a>   </li>
+                <li><a href="/Projects">Portfolio</a></li>
                 <li>Contact</li>
 
             </ul>

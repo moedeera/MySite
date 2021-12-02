@@ -1,6 +1,7 @@
 
 import Homepage  from './pages/Homepage';
 import Projects from './pages/Projects';
+import Table from './components/Table';
 import {
   BrowserRouter as
   Router,
@@ -22,6 +23,7 @@ function App() {
 <Route exact path='/' component={Homepage} />
 <Switch>
 <Route exact path="/Projects" component={Projects} />
+<Route exact path="/Table" component={Table} />
 </Switch>
 
   </div>
