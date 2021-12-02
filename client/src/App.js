@@ -10,6 +10,7 @@ import {
 
 
 import './App.css';
+import Navbar from './components/Navbar';
 
 function App() {
   
@@ -17,12 +18,13 @@ function App() {
     <Router>
    
     <div className="App">
-    <Homepage/>
+      <Navbar/>
+<Route exact path='/' component={Homepage} />
 
   </div>
 
 
-<Route exact path='/' component={Homepage} />
+
 <Switch>
 <Route exact path="/Projects" component={Projects} />
 </Switch>
