@@ -5,13 +5,13 @@ export const Navbar = () => {
         <div className="Navbar">
             <ul className="List">
 
-                <li>Home</li>
+                <li> <a href="">Home</a>   </li>
                 <li>Portfolio</li>
                 <li>Contact</li>
 
             </ul>
 
-            <i class="fas fa-bars"></i>
+            <i class="fas fa-bars fa-2x"></i>
 
         </div>
     )
