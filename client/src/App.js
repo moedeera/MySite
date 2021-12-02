@@ -1,6 +1,13 @@
 import logo from './logo.svg';
 import { Homepage } from './pages/Homepage';
-import {BrowserRouter, Routes, Route, Switch} from 'react-router-dom';
+import Projects from './pages/Projects';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+
 
 import './App.css';
 
@@ -8,11 +15,26 @@ function App() {
   
   return (
     <BrowserRouter>
+   
     <div className="App">
     <Homepage/>
+
+ 
+ <Routes>
+
+<Route path='/' element={<Homepage/>} />
+
+ </Routes>
+   
+
+
+
+
+
     </div>
-      
+   
 </BrowserRouter>
+
   );
 }
 
