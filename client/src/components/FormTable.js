@@ -1,8 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
 
-export const FormTable = () => {
 
+export const FormTable = () => {
+  const [edit, setEdit]= useState(false)
     const [asc, setAsc] = useState(true)
     const [num, setNum] = useState(true)
     var newArr
@@ -59,7 +60,7 @@ export const FormTable = () => {
 
     return (
         <div className="Table">
-            <h3>Table 2 : Array Using useState</h3>
+            <h3>Table 3 : Array Using useState and a Form</h3>
              <div className="Standings">
                    <div className="column">
                           <div> <h3>#</h3></div>
@@ -76,7 +77,31 @@ export const FormTable = () => {
                                             
                       </div> ))
                       }       
-                  </div>       
+                  </div>      
+
+                  <form className="form">
+
+                      <label>Please Select the User You want to edit</label>
+
+ <select >
+                      {Array2.map((profile)=>(
+                     <option value={profile.name}>{profile.name}</option>     
+                      ))}
+                 
+  
+
+</select>
+      <label>Edit name:
+        <input type="text" />
+      </label>
+      <label>Edit age:
+        <input type="number"  />
+      </label>
+
+
+    </form>
+
+
         </div>
     )
 }
