@@ -4,7 +4,7 @@ export const Homepage = () => {
     return (
         <div className="Homepage">
 
-            <h1>Hello</h1>
+            <h1>Hello!</h1>
             
         </div>
     )
