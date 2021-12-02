@@ -17,18 +17,21 @@ const Alpha = ()=>{
     }
 
  // ///////////////////UseState Array //
- let asc = true;
+ const [asc, setAsc] = useState(true)
  var newArr
  const [Array2,SetArray] = useState([
-     {rank:1,name:'Sam', age:25, gender:true},
-     {rank:2,name:'Bill', age:35, gender:true},
-     {rank:3,name:'John', age:22, gender:true},
-     {rank:4,name:'Sarah', age:19, gender:false}]
+     {rank:1,name:'Sam', age:25, gender:true, asc:false},
+     {rank:2,name:'Bill', age:35, gender:true,asc:false},
+     {rank:3,name:'John', age:22, gender:true,asc:false},
+     {rank:4,name:'Sarah', age:19, gender:false,asc:false}]
  )
  const Alpha2 = ()=>{
+    console.log(asc)
+
+
 if (asc===true){
      newArr = [...Array2].sort((a,b) => (a.name> b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
-    asc = false 
+   setAsc(false)
 
     console.log('cond 1')
   
@@ -36,11 +39,17 @@ if (asc===true){
    
 else if(asc=== false ){
      newArr = [...Array2].sort((a,b) => (b.name> a.name) ? 1 : ((a.name > b.name) ? -1 : 0))
-     asc = true 
+     setAsc(true)
      console.log('cond 2')
     
 }
-SetArray(newArr)   
+for (var j=0; j<newArr.length; j++){
+    newArr[j].rank= j+1
+}
+
+
+SetArray(newArr)
+
 
 
 
