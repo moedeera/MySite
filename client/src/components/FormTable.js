@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 
 export const FormTable = () => {
-  const [Form, SetForm]= useState([{name:'',age:''}])
+  const [Form, SetForm]= useState({name:'',age:''})
 
   const {name, age }=Form
 
@@ -77,7 +77,7 @@ export const FormTable = () => {
     SetForm({...Form, age:x.target.value})
    }
 
-
+console.log(Form)
    
    
    }
@@ -106,13 +106,14 @@ export const FormTable = () => {
                       }       
                   </div>      
 
-                  <form className="form">
+      <form className="form" onSubmit = {(e)=>{e.preventDefault();
+        console.log('submitted',Form)}}>
 
                       <label>Please Select the User You want to edit</label>
 
  <select >
                       {Array2.map((profile)=>(
-                     <option value={profile.name}>{profile.name}</option>     
+                     <option key ={profile.rank} value={profile.name}>{profile.name}</option>     
                       ))}
                  
   
@@ -124,16 +125,16 @@ export const FormTable = () => {
           placeholder="Name" 
           name="name"
           value = {name}
-          onChange = {e =>onChange(e,'name')}
+          onChange = {(e) =>onChange(e,'name')}
            required /> 
      
       <label>Edit age:</label>
       <input 
-          type="text" 
+          type="number" 
           placeholder="Age" 
-          name="name"
+          name="age"
           value = {age}
-          onChange = {e =>onChange(e,'age')}
+          onChange = {(e) =>onChange(e,'age')}
            required />
            
             <input type='submit' value='Change' />
