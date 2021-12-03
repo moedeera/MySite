@@ -3,6 +3,18 @@ import { useState } from 'react'
 
 
 export const FormTable = () => {
+  const [Form, SetForm]= useState([{name:'',age:''}])
+
+  const {name, age }=Form
+
+  const ChangeName =(x) =>{
+
+    SetForm({...Form, name:x.target.value})
+  }
+  
+
+
+
   const [edit, setEdit]= useState(false)
     const [asc, setAsc] = useState(true)
     const [num, setNum] = useState(true)
@@ -13,6 +25,9 @@ export const FormTable = () => {
         {rank:3,name:'John', age:22, gender:true},
         {rank:4,name:'Sarah', age:19, gender:false}]
     )
+
+
+    /// Functions
     const Alpha2 = ()=>{
      
    if (asc===true){
@@ -52,8 +67,20 @@ export const FormTable = () => {
    
    
    }
-   
+   // Form Functions
 
+    
+   const onChange = (x,y)=>{
+   if (y==='name'){
+     ChangeName(x)
+   } else if (y==='age'){
+    SetForm({...Form, age:x.target.value})
+   }
+
+
+   
+   
+   }
 
 
 
@@ -91,12 +118,26 @@ export const FormTable = () => {
   
 
 </select>
-      <label>Edit name:
-        <input type="text" />
-      </label>
-      <label>Edit age:
-        <input type="number"  />
-      </label>
+      <label>Edit name: </label>
+      <input 
+          type="text" 
+          placeholder="Name" 
+          name="name"
+          value = {name}
+          onChange = {e =>onChange(e,'name')}
+           required /> 
+     
+      <label>Edit age:</label>
+      <input 
+          type="text" 
+          placeholder="Age" 
+          name="name"
+          value = {age}
+          onChange = {e =>onChange(e,'age')}
+           required />
+           
+            <input type='submit' value='Change' />
+      
 
 
     </form>
