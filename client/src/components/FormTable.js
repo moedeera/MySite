@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 
 export const FormTable = () => {
-  const [Form, SetForm]= useState({name:'',age:''})
+  const [Form, SetForm]= useState({name:'',age:'', select:'Sam'})
 
   const {name, age }=Form
 
@@ -15,7 +15,7 @@ export const FormTable = () => {
 
 
 
-  const [edit, setEdit]= useState(false)
+
     const [asc, setAsc] = useState(true)
     const [num, setNum] = useState(true)
     var newArr
@@ -76,11 +76,25 @@ export const FormTable = () => {
    } else if (y==='age'){
     SetForm({...Form, age:x.target.value})
    }
-
-console.log(Form)
-   
-   
+   else if (y==='select'){
+    SetForm({...Form, select:x.target.value})
    }
+
+
+
+   }
+
+const onSubmission = (e)=>{
+
+  e.preventDefault()
+
+  console.log('submitted hurray', Form)
+
+  SetArray(Array2.map((person)=>person.name===Form.select ? {...person,name:Form.name, age:Form.age}:person))
+
+
+
+}
 
 
 
@@ -106,14 +120,20 @@ console.log(Form)
                       }       
                   </div>      
 
-      <form className="form" onSubmit = {(e)=>{e.preventDefault();
-        console.log('submitted',Form)}}>
+      <form className="form" onSubmit = {(e)=>onSubmission(e)}>
 
                       <label>Please Select the User You want to edit</label>
 
- <select >
+ <select 
+ 
+  onChange = {(e) =>onChange(e,'select')}
+  name='select'
+ >
                       {Array2.map((profile)=>(
-                     <option key ={profile.rank} value={profile.name}>{profile.name}</option>     
+                     <option key ={profile.rank} 
+                   
+                      value={profile.name}
+                     >{profile.name}</option>     
                       ))}
                  
   
