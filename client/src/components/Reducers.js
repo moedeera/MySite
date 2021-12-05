@@ -1,4 +1,4 @@
-import e from 'express'
+
 import React from 'react'
 import { useState, useReducer } from 'react'
 
@@ -17,12 +17,10 @@ else {return x}
 }); 
 
 case 'AlphOrder':
-if (action.payload===true){
-    setAsc(false)
+if (asc===true){
  return   [...state].sort((a,b) => (a.name> b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
-} else if (action.payload===false)
-{ setAsc(true)
-    return [...state].sort((a,b) => (b.name> a.name) ? 1 : ((a.name > b.name) ? -1 : 0))}
+} else if (asc===false)
+{ return [...state].sort((a,b) => (b.name> a.name) ? 1 : ((a.name > b.name) ? -1 : 0))}
  
 return 
     default:
@@ -55,7 +53,7 @@ return
                <div className="Standings">
                      <div className="column">
                             <div> <h3>#</h3></div>
-                            <div  onClick= {()=>reducer(state,{type:'AlphOrder', payload:'true'})}> <h3 >Name</h3></div>
+                            <div > <h3 >Name</h3></div>
                             <div > <h3 >Age</h3></div>
                             <div> <h3>X/Y</h3></div>
                      </div>
