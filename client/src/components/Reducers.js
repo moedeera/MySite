@@ -42,11 +42,8 @@ if(action.payload===true){
    return 
 
 case 'Rank':
-var newstate = state
-    for (var j=0; j<newstate.length; j++){
-        newstate[j].rank= j+1
-    } 
-        return newstate
+
+        return [...state].map((x)=>{return {...x,rank:state.indexOf(x)+1}})
 
     default:
         return state
@@ -68,7 +65,7 @@ var newstate = state
   
     useEffect(()=>{
 
-dispatch({type:'Rank',payload:''})},[state]
+dispatch({type:'Rank', payload:''})},[asc,num]
     )
   
 

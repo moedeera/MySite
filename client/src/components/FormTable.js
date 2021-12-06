@@ -8,9 +8,14 @@ export const FormTable = () => {
   const {name, age }=Form
 
   const ChangeName =(x) =>{
+if (x.target.value===''){
+    console.log('no change in name')
+  } else {
+    
+    SetForm({...Form, name:x.target.value})}
 
-    SetForm({...Form, name:x.target.value})
-  }
+
+}
   
 
 
@@ -146,7 +151,7 @@ const onSubmission = (e)=>{
           name="name"
           value = {name}
           onChange = {(e) =>onChange(e,'name')}
-           required /> 
+            /> 
      
       <label>Edit age:</label>
       <input 
