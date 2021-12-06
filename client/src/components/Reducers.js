@@ -1,28 +1,53 @@
 
 import React from 'react'
-import { useState, useReducer } from 'react'
+import { useState, useReducer, useEffect } from 'react'
 
 export const Reducers = () => {
     const [asc, setAsc] = useState(true)
     const [num, setNum] = useState(true)
   
 
+
+  
     function reducer (state,action){
 switch(action.type){
-case 'GenderSwap':      
-return state.map((x)=>{
-if (x.rank===action.payload){return {...x, gender:!x.gender}}
-else {return x}
+case 'GenderSwap':  
 
-}); 
+return state.map((x)=>{
+        if (x.rank===action.payload)
+    {return {...x, gender:!x.gender}}
+else {return x}})
+
+
 
 case 'AlphOrder':
-if (asc===true){
+if (action.payload===true){
+    setAsc(false)
  return   [...state].sort((a,b) => (a.name> b.name) ? 1 : ((b.name > a.name) ? -1 : 0))
-} else if (asc===false)
-{ return [...state].sort((a,b) => (b.name> a.name) ? 1 : ((a.name > b.name) ? -1 : 0))}
- 
-return 
+} 
+else if (action.payload===false)
+{    setAsc(true)
+     return [...state].sort((a,b) => (b.name> a.name) ? 1 : ((a.name > b.name) ? -1 : 0))}
+return
+
+case 'NumOrder':
+
+if(action.payload===true){
+    setNum(false)
+    return   [...state].sort((a,b) => (a.age> b.age) ? 1 : ((b.age > a.age) ? -1 : 0))
+ } else if (action.payload===false){
+     setNum(true)
+     return   [...state].sort((a,b) => (b.age> a.age) ? 1 : ((a.age > b.age) ? -1 : 0))
+ }
+   return 
+
+case 'Rank':
+var newstate = state
+    for (var j=0; j<newstate.length; j++){
+        newstate[j].rank= j+1
+    } 
+        return newstate
+
     default:
         return state
 
@@ -41,7 +66,11 @@ return
   
     const {name, age, select }=Form
   
-    
+    useEffect(()=>{
+
+dispatch({type:'Rank',payload:''})},[state]
+    )
+  
 
 
 
@@ -53,16 +82,16 @@ return
                <div className="Standings">
                      <div className="column">
                             <div> <h3>#</h3></div>
-                            <div > <h3 >Name</h3></div>
-                            <div > <h3 >Age</h3></div>
+                            <div onClick = {()=>dispatch({type:'AlphOrder', payload:asc})} > <h3 >Name</h3></div>
+                            <div onClick = {()=>dispatch({type:'NumOrder', payload:num})}> <h3 >Age</h3></div>
                             <div> <h3>X/Y</h3></div>
                      </div>
               {state.map((profile)=>(
-                         <div key={profile.rank} className="column" onClick = {(e)=>reducer(state,{type:'GenderSwap', payload:profile.rank})}>
+                         <div key={profile.rank} className="column" >
                          <div> <h3>{profile.rank}</h3></div>
                          <div> <h3>{profile.name}</h3></div>
                         <div> <h3>{profile.age}</h3></div>
-                        <div> <h3>{profile.gender?'male': 'female'}</h3></div>
+                        <div onClick = {()=>dispatch({type:'GenderSwap', payload:profile.rank})}> <h3>{profile.gender?'male': 'female'}</h3></div>
                                               
                         </div> ))
                         }       
