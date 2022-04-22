@@ -44,7 +44,7 @@ if(action.payload===true){
 case 'Rank':
 
         return [...state].map((x)=>{return {...x,rank:state.indexOf(x)+1}})
-
+        
     default:
         return state
 
