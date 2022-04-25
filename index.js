@@ -2,7 +2,7 @@ const express = require('express');
 
 const app = express();
 const path = require('path');
-
+const dotenv = require("dotenv").config(".env");
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true})); 
