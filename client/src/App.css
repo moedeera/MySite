@@ -1,14 +1,11 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=M+PLUS+1+Code:wght@500;600;700&family=PT+Sans:wght@400;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=M+PLUS+1+Code:wght@500;600;700&family=PT+Sans:wght@400;700&display=swap");
 
 .App {
   text-align: center;
   background-color: black;
-  font-family: 'Fira Sans', sans-serif;
-font-family: 'M PLUS 1 Code', sans-serif;
-font-family: 'PT Sans', sans-serif;
-  
+  font-family: "Fira Sans", sans-serif;
+  font-family: "M PLUS 1 Code", sans-serif;
+  font-family: "PT Sans", sans-serif;
 }
 
 .App-logo {
@@ -46,8 +43,7 @@ font-family: 'PT Sans', sans-serif;
   }
 }
 /* Navbar*/
-.Navbar{
-
+.Navbar {
   display: flex;
   justify-content: flex-end;
 
@@ -55,114 +51,105 @@ font-family: 'PT Sans', sans-serif;
   font-weight: 500;
   letter-spacing: 2px;
   width: 95%;
-  margin:0 auto;
-  color:white;
+  margin: 0 auto;
+  color: white;
   border-bottom: 1px solid grey;
-
 }
-.List{
-list-style: none;
-width: 30%;
+.List {
+  list-style: none;
+  width: 30%;
   display: flex;
- justify-content: space-between;
-
+  justify-content: space-between;
 }
 .Navbar i {
-
   display: none;
 }
-a, a:visited{
-
-  color:white;
+a,
+a:visited {
+  color: white;
   text-decoration: none;
 }
 /*Homepage*/
-.Homepage{
-
-font-size: 30px;
-color: steelblue;
+.Homepage {
+  font-size: 30px;
+  color: steelblue;
 }
 
-
 /*------------------------------------------------------------------Table component-----------------------------------------------------------------*/
-.Table{
-
+.Table {
   background-color: teal;
   color: white;
   padding: 5px;
 }
 
-.Standings{
-
+.Standings {
   display: flex;
   flex-direction: column;
-  border:1px solid white;
+  border: 1px solid white;
   width: 100%;
   max-width: 600px;
   margin: 20px auto;
 }
 
-.column{
+.column {
   display: grid;
-  grid-template-columns:1fr repeat(3,2.5fr);
+  grid-template-columns: 1fr repeat(3, 2.5fr);
   margin: 0 auto;
   width: 100%;
 
   border: 1px solid white;
 }
 
-.column > div{
-
-  border-left:  1px solid white;
+.column > div {
+  border-left: 1px solid white;
 }
 
-.column:hover, .column:focus{
+.column:hover,
+.column:focus {
   background-color: grey;
   opacity: 0.6;
 }
 
-
-.column:first-of-type{
-
-background-color:grey;
-
+.column:first-of-type {
+  background-color: grey;
 }
 
 /*Form*/
-.form{
+.form {
   width: 100%;
   max-width: 600px;
   padding: 10px;
-  margin:0 auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   border: 1px solid white;
-  gap:10px;
+  gap: 10px;
 }
-.form label, .form input, .form select{
-
-width: 20rem;
-
+.form label,
+.form input,
+.form select {
+  width: 20rem;
 }
+.img-hmpge {
+  margin: 0 auto;
+  border: 5px solid green;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-/* Navbar*/
+  /* Navbar*/
 
-.List{
-  display: none;
-  
-}
-.Navbar{
-
-  padding: 0 5px;
-  
-
-}
-.Navbar i {
-
-  display: block;
-}
-
-
-
+  .List {
+    display: none;
+  }
+  .Navbar {
+    padding: 0 5px;
+  }
+  .Navbar i {
+    display: block;
+  }
 }
